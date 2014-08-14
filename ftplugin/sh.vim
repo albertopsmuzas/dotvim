@@ -1,0 +1,3 @@
+" FOLDING OPTIONS
+set foldmethod=syntax
+let g:sh_fold_enabled= 7

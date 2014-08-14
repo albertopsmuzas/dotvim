@@ -11,3 +11,8 @@ Switch to the `~/.vim` directory, and fetch submodules:
     cd ~/.vim
     git submodule init
     git submodule update
+
+Add new snippets at snippets folder. Snippets at bundle/snipmate/snippets will
+be ignored if a file with the same name exists in snippets
+
+Add file-type specific plugins at ftplugins
