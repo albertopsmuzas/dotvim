@@ -34,18 +34,19 @@ set backup
 set backupdir=~/.tmp
 " Copied lines/characters also are passed to system clipboard
 set clipboard=unnamed
-map ,1 :tabprevious
-map ,2 :tabnext
-map ,f :tabfind
-map ,m :tabmove
-map ,n :tabnew
+nmap ,1 :tabprevious
+nmap ,2 :tabnext
+nmap ,f :tabfind
+nmap ,m :tabmove
+nmap ,n :tabnew
 " draw horizontal line where cursor is
 set cursorline
 
 " =========================================================================
 " Shortcuts for Taglist plugin
 " =========================================================================
-map ,t :TlistToggle
+nmap ,t :TlistToggle
+nmap ,u :TlistUpdate
 " =========================================================================
 " Better parenthesis perfomance:
 " With imaps.vim plugin, <C-J> in insertion mode is mapped to move the cursor
@@ -58,7 +59,6 @@ inoremap () ()<++><Esc>hhhhi
 inoremap [] []<++><Esc>hhhhi
 inoremap {} {}<++><Esc>hhhhi
 inoremap "" ""<++><Esc>hhhhi
-" inoremap <Tab> <C-v><Tab>
 " ========================================================================
 " Shortcuts for NERDTree plugin
 nnoremap <C-t> :NERDTreeToggle

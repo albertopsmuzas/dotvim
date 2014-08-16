@@ -10,9 +10,6 @@
 [submodule "bundle/taglist"]
 	path = bundle/taglist
 	url = https://github.com/vim-scripts/taglist.vim
-[submodule "bundle/imaps"]
-	path = bundle/imaps
-	url = https://github.com/vim-scripts/imaps.vim
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree
