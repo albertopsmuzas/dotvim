@@ -13,9 +13,6 @@
 [submodule "bundle/imaps"]
 	path = bundle/imaps
 	url = https://github.com/vim-scripts/imaps.vim
-[submodule "bundle/yankring"]
-	path = bundle/yankring
-	url = https://github.com/vim-scripts/YankRing.vim
 [submodule "bundle/nerdtree"]
 	path = bundle/nerdtree
 	url = https://github.com/scrooloose/nerdtree

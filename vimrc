@@ -1,8 +1,3 @@
-" ========================================================================= 
-" SOME REMARKS
-"
-" <leader> key is \
-"
 " =========================================================================
 " Use pathogen plugin
 execute pathogen#infect()
@@ -63,6 +58,7 @@ inoremap () ()<++><Esc>hhhhi
 inoremap [] []<++><Esc>hhhhi
 inoremap {} {}<++><Esc>hhhhi
 inoremap "" ""<++><Esc>hhhhi
+" inoremap <Tab> <C-v><Tab>
 " ========================================================================
 " Shortcuts for NERDTree plugin
 nnoremap <C-t> :NERDTreeToggle
