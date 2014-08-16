@@ -12,7 +12,15 @@ Switch to the `~/.vim` directory, and fetch submodules:
     git submodule init
     git submodule update
 
-Add new snippets at snippets folder. Snippets at bundle/snipmate/snippets will
-be ignored if a file with the same name exists in snippets
+Load documentation: 
 
-Add file-type specific plugins at ftplugins
+    Open vim and type :Helptags
+
+Some suggestions:
+
+    Add new snippets at snippets folder. Snippets at bundle/snipmate/snippets will
+    be ignored if a file with the same name exists in snippets
+
+    Add file-type specific plugins at ftplugins
+
+	 Install powerline fonts: apt-get install fonts-powerline

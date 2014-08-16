@@ -16,3 +16,18 @@
 [submodule "bundle/yankring"]
 	path = bundle/yankring
 	url = https://github.com/vim-scripts/YankRing.vim
+[submodule "bundle/nerdtree"]
+	path = bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree
+[submodule "bundle/multiplecursors"]
+	path = bundle/multiplecursors
+	url = https://github.com/terryma/vim-multiple-cursors
+[submodule "bundle/supertab"]
+	path = bundle/supertab
+	url = https://github.com/ervandew/supertab
+[submodule "bundle/airline"]
+	path = bundle/airline
+	url = https://github.com/bling/vim-airline
+[submodule "bundle/fugitive"]
+	path = bundle/fugitive
+	url = https://github.com/tpope/vim-fugitive

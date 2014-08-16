@@ -1,4 +1,12 @@
+" ========================================================================= 
+" SOME REMARKS
+"
+" <leader> key is \
+"
+" =========================================================================
+" Use pathogen plugin
 execute pathogen#infect()
+" =========================================================================
 " Colour syntax
 syntax on
 " Activate plugin use
@@ -31,12 +39,6 @@ set backup
 set backupdir=~/.tmp
 " Copied lines/characters also are passed to system clipboard
 set clipboard=unnamed
-" Change status bar
-set statusline=%F%m%r%h%w\ [%{&ff}]\ [%Y]\ [HEX=\%02.2B]\ [X=%04l\ Y=%03v]\ [LEN=%L]
-" Change error beep by a graphic warning (It's slow, I don't like it)
-" set visualbell
-" Tab maps
-map ,t :TlistToggle
 map ,1 :tabprevious
 map ,2 :tabnext
 map ,f :tabfind
@@ -45,15 +47,39 @@ map ,n :tabnew
 " draw horizontal line where cursor is
 set cursorline
 
-" ============================================================================
+" =========================================================================
+" Shortcuts for Taglist plugin
+" =========================================================================
+map ,t :TlistToggle
+" =========================================================================
 " Better parenthesis perfomance:
 " With imaps.vim plugin, <C-J> in insertion mode is mapped to move the cursor
 " to the next place holder <++> (afterwards it is deleted). The idea is
 " to print this space holder <++> each time we type (, [, { and " as well as
 " the proper closing character. The cursor is moved inside parenthesis or
 " quotation
-" ============================================================================
+" =========================================================================
 inoremap () ()<++><Esc>hhhhi
 inoremap [] []<++><Esc>hhhhi
 inoremap {} {}<++><Esc>hhhhi
 inoremap "" ""<++><Esc>hhhhi
+" ========================================================================
+" Shortcuts for NERDTree plugin
+nnoremap <C-t> :NERDTreeToggle
+" ========================================================================
+" Options for airline plugin
+set laststatus=2
+set t_Co=256
+set timeoutlen=10
+if !exists('g:airline_symbols')
+	  let g:airline_symbols = {}
+endif
+let g:airline_symbols.space = "\ua0"
+let g:airline_powerline_fonts = 1
+let g:airline_theme             = 'badwolf'
+" ========================================================================
+" Options for supertab plugin
+let g:SuperTabMappingForward = '<s-tab>'
+let g:SuperTabMappingBackward = '<c-s-space>'
+let g:SuperTabMappingTabLiteral = '<tab>'
+" =========================================================================
