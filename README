@@ -1,26 +1,26 @@
 Installation:
 
-    git clone git://github.com/moshpitsurfer/dotvim.git ~/.vim
+	git clone git://github.com/moshpitsurfer/dotvim.git ~/.vim
 
 Create symlinks:
 
-    ln -s ~/.vim/vimrc ~/.vimrc
+	ln -s ~/.vim/vimrc ~/.vimrc
 
 Switch to the `~/.vim` directory, and fetch submodules:
 
-    cd ~/.vim
-    git submodule init
-    git submodule update
+	cd ~/.vim
+	git submodule init
+	git submodule update
 
-Load documentation: 
+Load documentation:
 
-    Open vim and type :Helptags
+	Open vim and type :Helptags
 
 Some suggestions:
 
-    Add new snippets at snippets folder. Snippets at bundle/snipmate/snippets will
-    be ignored if a file with the same name exists in snippets
+	Add new snippets at snippets folder
 
-    Add file-type specific plugins at ftplugins
+	Add file-type specific plugins at ftplugins
 
-	 Install powerline fonts: apt-get install fonts-powerline
+	Install powerline fonts
+		apt-get install fonts-powerline (debian)

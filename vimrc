@@ -5,8 +5,8 @@ execute pathogen#infect()
 " =========================================================================
 " Miscellaneous workflow enhancement
 " =========================================================================
-syntax on						" colour syntax
 filetype plugin indent on	" activate plugins and indentation
+syntax on						" enable syntax highlighting
 let mapleader = ','			" set leader key, better ',' for spanish keyboard ;)
 colorscheme koehler			" well, set solorscheme
 set number 						" number lines
@@ -98,3 +98,4 @@ let g:SuperTabMappingTabLiteral = '<tab>'
 " Options for multiplecursor plugin
 " ========================================================================
 nmap <Leader>s :MultipleCursorsFind
+" ========================================================================
