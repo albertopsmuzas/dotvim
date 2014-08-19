@@ -141,7 +141,7 @@ snippet charfunc
 	!> @date ${3:! type a date}
 	!> @version 1.0
 	!-----------------------------------------------------------
-	CHARACTER(KIND=${4:*}) FUNCTION $1(${5:arguments}) 
+	CHARACTER(LEN=${4:*}) FUNCTION $1(${5:arguments}) 
 		! Initial declarations	
 		${6:use_modules?}
 		IMPLICIT NONE
@@ -204,10 +204,19 @@ snippet read
 	READ(${1:*},${2:*}) ${3}
 snippet write
 	WRITE(${1:*},${2:*}) ${3}
-snippet selectcase
+snippet print
+	WRITE(${1:*},${2:*}) "${3}"
+snippet switch
 	SELECT CASE(${1:! variable name})
 		CASE(${2:some condition})
 			${3:! body}
 		CASE DEFAULT
 			${4:! do nothing}
+	END SELECT
+snippet boolswitch
+	SELECT CASE(${1:! variable name})
+		CASE(.TRUE.)
+			${2:! body}
+		CASE(.FALSE.)
+			${3:! do nothing}
 	END SELECT
