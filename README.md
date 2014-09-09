@@ -1,8 +1,8 @@
 #DOTVIM
 
 ##BRIEF
-Compilation of plugins and configuraiton files for vim which I use
-during in my everyday work.
+Compilation of plugins and configuration files for vim which I use
+during my everyday work.
 
 ##DETAILS
 * The resulting workflow is quite oriented to deal with FORTRAN 90,95,08 programming.
@@ -12,25 +12,20 @@ during in my everyday work.
 
 ##INSTALLATION
 1. Type:
-
-	* git clone https://github.com/moshpitsurfer/dotvim ~/.vim
+	..* git clone https://github.com/moshpitsurfer/dotvim ~/.vim
 
 2. Create symlinks:
-
-	* ln -s ~/.vim/vimrc ~/.vimrc
+	..* ln -s ~/.vim/vimrc ~/.vimrc
 
 3. Fetch submodules:
 
-	* cd ~/.vim
-
-	* git submodule init
-
-	* git submodule update
+	..* cd ~/.vim
+	..* git submodule init
+	..* git submodule update
 
 4. Load documentation:
 
-	* Open vim and type:
-
+	..* Open vim and type:
 		:Helptags
 
 ##ADD NEW PLUGIN
@@ -38,13 +33,13 @@ during in my everyday work.
 
 2. Type:
 
-	* git submodule add (github page) ~/.vim/bundle/(arbitrary name>
+	..* git submodule add (github page) ~/.vim/bundle/(arbitrary name>
 
 ##SUGGESTIONS
-* Add new snippets at ~/.vim/snippets folder.
+..* Add new snippets at ~/.vim/snippets folder.
 
-* Add file-type specific plugins at ~/.vim/ftplugins
+..* Add file-type specific plugins at ~/.vim/ftplugins
 
-* Install powerline fonts or you'll see some weird symbols plotted in airline. You can
-  modify my ~/.vim/vimrc file and use other themes that don't need powerline fonts.
-  For debian, type: apt-get install fonts-powerline
+..* Install powerline fonts or you'll see some weird symbols plotted in airline. You can
+    modify my ~/.vim/vimrc file and use other themes that don't need powerline fonts.
+    For debian, type: apt-get install fonts-powerline
