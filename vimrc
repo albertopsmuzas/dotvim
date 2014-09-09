@@ -17,6 +17,7 @@ set t_Co=256					" set 256 colours mode
 set encoding=utf-8			" set encoding
 set undolevels=1000			" more levels for undo
 set smartindent				" smart indentation
+set ignorecase					" needed for smartcase
 set smartcase 					" case insensitive if all the pattern is in low case, else case sensitive
 set laststatus=2				" controls when the last window will've a status line (2: always)
 set incsearch 					" search words while they're typed
