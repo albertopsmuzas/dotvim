@@ -19,13 +19,12 @@ during my everyday work.
 	* git submodule init
 	* git submodule update
 4. Load documentation:
-	* Open vim and type:
-	:Helptags
+	* Open vim and type ":Helptags"
 
 ##ADD NEW PLUGIN
 1. Find the developer's github page
 2. Type:
-	* git submodule add (github page) ~/.vim/bundle/(arbitrary name>
+	* git submodule add *repository* ~/.vim/bundle/*foo_name*
 
 ##SUGGESTIONS
 	* Add new snippets at ~/.vim/snippets folder.
