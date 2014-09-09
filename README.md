@@ -1,6 +1,6 @@
 #MY DOTVIM CONFIGURATION FILES & PLUGINS
 
-##BRIEF 
+##BRIEF
 Compilation of plugins and configuraiton files for vim which I use
 during in my everyday work.
 
@@ -10,24 +10,24 @@ during in my everyday work.
   included as submodules.
 
 ##INSTALLATION
-	1. Type:
-		. git clone https://github.com/moshpitsurfer/dotvim.git ~/.vim
+1. Type:
+	. git clone https://github.com/moshpitsurfer/dotvim.git ~/.vim
 
-	2. Create symlinks:
-		. ln -s ~/.vim/vimrc ~/.vimrc
+2. Create symlinks:
+	. ln -s ~/.vim/vimrc ~/.vimrc
 
-	3. Fetch submodules:
-		. cd ~/.vim
-		. git submodule init
-		. git submodule update
+3. Fetch submodules:
+	. cd ~/.vim
+	. git submodule init
+	. git submodule update
 
-	4. Load documentation:
-		. Open vim and type :Helptags
+4. Load documentation:
+	. Open vim and type :Helptags
 
 ##ADD NEW PLUGIN
-	1. Find the developer's github page
-	2. Type:
-		. git submodule add <github page> ~/.vim/bundle/<arbitrary name>
+1. Find the developer's github page
+2. Type:
+	. git submodule add <github page> ~/.vim/bundle/<arbitrary name>
 
 ##SUGGESTIONS
 . Add new snippets at ~/.vim/snippets folder.
