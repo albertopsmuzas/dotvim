@@ -27,8 +27,8 @@ during my everyday work.
 	* git submodule add *repository* ~/.vim/bundle/*foo_name*
 
 ##SUGGESTIONS
-	* Add new snippets at ~/.vim/snippets folder.
-	* Add file-type specific plugins at ~/.vim/ftplugins
-	* Install powerline fonts or you'll see some weird symbols plotted in airline. You can
-     modify my ~/.vim/vimrc file and use other themes that don't need powerline fonts.
-     For debian, type: apt-get install fonts-powerline
+* Add new snippets at ~/.vim/snippets folder.
+* Add file-type specific plugins at ~/.vim/ftplugins.
+* Install powerline fonts or you'll see some weird symbols plotted in airline. You can
+  modify my ~/.vim/vimrc file and use other themes that don't need powerline fonts.
+  For debian, type: apt-get install fonts-powerline.
