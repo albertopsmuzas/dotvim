@@ -97,5 +97,6 @@ let g:SuperTabMappingTabLiteral = '<tab>'
 " =========================================================================
 " Options for multiplecursor plugin
 " ========================================================================
-nmap <Leader>s :MultipleCursorsFind
+nmap <C-X> :MultipleCursorsFind
+cmap <C-X>  MultipleCursorsFind
 " ========================================================================

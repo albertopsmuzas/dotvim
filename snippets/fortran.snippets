@@ -1,3 +1,4 @@
+# BIG STRUCTURES: PROGRAMS,ROUTINES,MODULES /////////////////////////////////////////
 snippet program
 	!##################################################
 	! PROGRAM: ${1:!name}
@@ -19,7 +20,7 @@ snippet module
 	!#########################################################
 	! MODULE: ${1:!type a name}
 	!> @brief
-	!! ${2:brief explanation} 
+	!! ${2:brief explanation}
 	!##########################################################
 	MODULE $1
 	! Initial declarations
@@ -29,6 +30,123 @@ snippet module
 	CONTAINS
 	${5:! contains, body}
 	END MODULE $5
+snippet subroutine
+	!###########################################################
+	!# SUBROUTINE: ${1:name}
+	!###########################################################
+	!> @brief
+	!! ${2:brief description}
+	!
+	!> @author A.S. Muzas - alberto.muzas@uam.es
+	!> @date ${3:! type a date}
+	!> @version 1.0
+	!-----------------------------------------------------------
+	SUBROUTINE $1(${4:arguments})
+		! Initial declarations
+		${5:use_modules?}
+		IMPLICIT NONE
+		! I/O variables
+		${6:io_vars}
+		! Local variables
+		${7:local_vars}
+		! Run section
+		${8:body}
+		RETURN
+	END SUBROUTINE $1
+snippet boolfunc
+	!###########################################################
+	!# FUNCTION: ${1:! type a name}
+	!###########################################################
+	!> @brief
+	!! ${2:! type brief explanation}
+	!
+	!> @author A.S. Muzas - alberto.muzas@uam.es
+	!> @date ${3:! type a date}
+	!> @version 1.0
+	!-----------------------------------------------------------
+	LOGICAL FUNCTION $1(${4:some arguments})
+		! Initial declarations
+		${5: !use_modules?}
+		IMPLICIT NONE
+		! I/O variables
+		${6:! io_vars}
+		! Local variables
+		${7: !local_vars}
+		! Run section
+		${8: !body}
+		RETURN
+	END FUNCTION $1
+snippet realfunc
+	!###########################################################
+	!# FUNCTION: ${1:! type a name}
+	!###########################################################
+	!> @brief
+	!! ${2:! type brief explanation}
+	!
+	!> @author A.S. Muzas - alberto.muzas@uam.es
+	!> @date ${3:! type a date}
+	!> @version 1.0
+	!-----------------------------------------------------------
+	REAL(KIND=${4:8}) FUNCTION $1(${5:arguments})
+		! Initial declarations
+		${6:! use_modules?}
+		IMPLICIT NONE
+		! I/O variables
+		${7: !io_vars}
+		! Local variables
+		${8:! local_vars}
+		! Run section
+		${9: !body}
+		RETURN
+	END FUNCTION $1
+snippet intfunc
+	!###########################################################
+	!# FUNCTION: ${1:name}
+	!###########################################################
+	!> @brief
+	!! ${2:type brief explanation}
+	!
+	!> @author A.S. Muzas - alberto.muzas@uam.es
+	!> @date ${3:! type a date}
+	!> @version 1.0
+	!-----------------------------------------------------------
+	INTEGER(KIND=${4:4}) FUNCTION $1(${5:arguments})
+		! Initial declarations
+		${6:use_modules?}
+		IMPLICIT NONE
+		! I/O variables
+		${7:io_vars}
+		! Local variables
+		${8:local_vars}
+		! Run section
+		${9:body}
+		RETURN
+	END FUNCTION $1
+snippet charfunc
+	!###########################################################
+	!# FUNCTION: ${1:name}
+	!###########################################################
+	!> @brief
+	!! ${2:type brief explanation}
+	!
+	!> @author A.S. Muzas - alberto.muzas@uam.es
+	!> @date ${3:! type a date}
+	!> @version 1.0
+	!-----------------------------------------------------------
+	CHARACTER(LEN=${4:*}) FUNCTION $1(${5:arguments})
+		! Initial declarations
+		${6:use_modules?}
+		IMPLICIT NONE
+		! I/O variables
+		${7:io_vars}
+		! Local variables
+		${8:local_vars}
+		! Run section
+		${9:body}
+		RETURN
+	END FUNCTION $1
+
+# CONTROL INSTRUCTIONS //////////////////////////////////////////////////////////////
 snippet if
 	IF (${1:!condition}) THEN
 		${2:! body}
@@ -41,6 +159,84 @@ snippet dowhile
 	DO WHILE (${1:!condition})
 		${2:! loop body}
 	END DO
+snippet switch
+	SELECT CASE(${1:! variable name})
+		CASE(${2:some condition})
+			${3:! body}
+		CASE DEFAULT
+			${4:! do nothing}
+	END SELECT
+snippet boolswitch
+	SELECT CASE(${1:! variable name})
+		CASE(.TRUE.)
+			${2:! body}
+		CASE(.FALSE.)
+			${3:! do nothing}
+	END SELECT
+
+# VARIABLE TYPES ////////////////////////////////////////////////////////////////////
+
+# basic
+snippet real
+	REAL(KIND=${1:8}) :: ${2:name}
+snippet int
+	INTEGER(KIND=${1:4}) :: ${2:name}
+snippet bool
+	LOGICAL :: ${1:name}
+snippet char
+	CHARACTER :: ${1:name}
+snippet string
+	CHARACTER(LEN=${1:*}) :: ${2:name}
+
+# parameters
+snippet parareal
+	REAL(KIND=${1:8}),PARAMETER :: ${2:name}=${3:value}
+snippet paraint
+	INTEGER(KIND=${1:4}),PARAMETER :: ${2:name}=${3:value}
+snippet parabool
+	LOGICAL,PARAMETER :: ${1:name}=${2:value}
+snippet parachar
+	CHARACTER,PARAMETER :: ${1:name}=${2:value}
+snippet parastring
+	CHARACTER(LEN=${1:*}),PARAMETER :: ${2:name}=${3:value}
+
+# intent in
+snippet inreal
+	REAL(KIND=${1:8}),INTENT(IN) :: ${2:name}
+snippet inint
+	INTEGER(KIND=${1:4}),INTENT(IN) :: ${2:name}
+snippet inbool
+	LOGICAL,INTENT(IN) :: ${1:name}
+snippet inchar
+	CHARACTER,INTENT(IN) :: ${1:name}
+snippet instring
+	CHARACTER(LEN=${1:*}),INTENT(IN) :: ${2:name}
+
+# intent out
+snippet outreal
+	REAL(KIND=${1:8}),INTENT(OUT) :: ${2:name}
+snippet outint
+	INTEGER(KIND=${1:4}),INTENT(OUT) :: ${2:name}
+snippet outbool
+	LOGICAL,INTENT(OUT) :: ${1:name}
+snippet outchar
+	CHARACTER,INTENT(OUT) :: ${1:name}
+snippet outstring
+	CHARACTER(LEN=${1:*}),INTENT(OUT) :: ${2:name}
+
+# intent inout
+snippet inoutreal
+	REAL(KIND=${1:8}),INTENT(INOUT) :: ${2:name}
+snippet inoutint
+	INTEGER(KIND=${1:4}),INTENT(INOUT) :: ${2:name}
+snippet inoutbool
+	LOGICAL,INTENT(INOUT) :: ${1:name}
+snippet inoutchar
+	CHARACTER,INTENT(INOUT) :: ${1:name}
+snippet inoutstring
+	CHARACTER(LEN=${1:*}),INTENT(INOUT) :: ${2:name}
+
+# generics
 snippet newtype
 	!/////////////////////////////////////////////////////////////////
 	! TYPE: ${1:! type a name}
@@ -57,166 +253,31 @@ snippet newtype
 	CONTAINS
 		${5:! some type-bound procedures}
 	END TYPE $1
+snippet type
+	TYPE(${1:type}) :: ${2:name}
+snippet array
+	${1:type}, DIMENSION(${2}) :: ${3:name}
+
+# I/O CONTROL ///////////////////////////////////////////////////////////////////////
 snippet open
 	OPEN (${1:10},FILE=${2:filename},STATUS="${3:status}",ACTION="${4:action}")${5}
 snippet close
 	CLOSE(${1:10})${2}
-snippet boolfunc
-	!###########################################################
-	!# FUNCTION: ${1:! type a name} 
-	!###########################################################
-	!> @brief 
-	!! ${2:! type brief explanation}
-	!
-	!> @author A.S. Muzas - alberto.muzas@uam.es
-	!> @date ${3:! type a date}
-	!> @version 1.0
-	!-----------------------------------------------------------
-	LOGICAL FUNCTION $1(${4:some arguments}) 
-		! Initial declarations	
-		${5: !use_modules?}
-		IMPLICIT NONE
-		! I/O variables
-		${6:! io_vars}
-		! Local variables
-		${7: !local_vars}
-		! Run section
-		${8: !body}
-		RETURN
-	END FUNCTION $1
-snippet realfunc
-	!###########################################################
-	!# FUNCTION: ${1:! type a name} 
-	!###########################################################
-	!> @brief 
-	!! ${2:! type brief explanation}
-	!
-	!> @author A.S. Muzas - alberto.muzas@uam.es
-	!> @date ${3:! type a date}
-	!> @version 1.0
-	!-----------------------------------------------------------
-	REAL(KIND=${4:8}) FUNCTION $1(${5:arguments}) 
-		! Initial declarations	
-		${6:! use_modules?}
-		IMPLICIT NONE
-		! I/O variables
-		${7: !io_vars}
-		! Local variables
-		${8:! local_vars}
-		! Run section
-		${9: !body}
-		RETURN
-	END FUNCTION $1
-snippet intfunc
-	!###########################################################
-	!# FUNCTION: ${1:name} 
-	!###########################################################
-	!> @brief
-	!! ${2:type brief explanation}
-	!
-	!> @author A.S. Muzas - alberto.muzas@uam.es
-	!> @date ${3:! type a date}
-	!> @version 1.0
-	!-----------------------------------------------------------
-	INTEGER(KIND=${4:4}) FUNCTION $1(${5:arguments}) 
-		! Initial declarations	
-		${6:use_modules?}
-		IMPLICIT NONE
-		! I/O variables
-		${7:io_vars}
-		! Local variables
-		${8:local_vars}
-		! Run section
-		${9:body}
-		RETURN
-	END FUNCTION $1
-snippet charfunc
-	!###########################################################
-	!# FUNCTION: ${1:name} 
-	!###########################################################
-	!> @brief
-	!! ${2:type brief explanation}
-	!
-	!> @author A.S. Muzas - alberto.muzas@uam.es
-	!> @date ${3:! type a date}
-	!> @version 1.0
-	!-----------------------------------------------------------
-	CHARACTER(LEN=${4:*}) FUNCTION $1(${5:arguments}) 
-		! Initial declarations	
-		${6:use_modules?}
-		IMPLICIT NONE
-		! I/O variables
-		${7:io_vars}
-		! Local variables
-		${8:local_vars}
-		! Run section
-		${9:body}
-		RETURN
-	END FUNCTION $1
-snippet subroutine
-	!###########################################################
-	!# SUBROUTINE: ${1:name} 
-	!###########################################################
-	!> @brief
-	!! ${2:brief description}
-	!
-	!> @author A.S. Muzas - alberto.muzas@uam.es
-	!> @date ${3:! type a date}
-	!> @version 1.0
-	!-----------------------------------------------------------
-	SUBROUTINE $1(${4:arguments})
-		! Initial declarations	
-		${5:use_modules?}
-		IMPLICIT NONE
-		! I/O variables
-		${6:io_vars}
-		! Local variables
-		${7:local_vars}
-		! Run section
-		${8:body}
-		RETURN
-	END SUBROUTINE $1
-snippet array
-	${1:type}, DIMENSION(${2}) :: ${3:name}
-snippet const
-	${1:type}, PARAMETER :: ${3:name} = ${4:value}
-snippet int
-	INTEGER(KIND=${1:4}) :: ${2:name}
-snippet real
-	REAL(KIND=${1:8}) :: ${2:name}
-snippet bool
-	LOGICAL :: ${1:name}
-snippet char
-	CHARACTER :: ${1:name}
-snippet string
-	CHARACTER(LEN=${1:*}) :: ${2:name}
-snippet type
-	TYPE(${1:type}) :: ${2:name}
+snippet read
+	READ(${1:*},${2:*}) ${3}
 snippet debug
 	#ifdef DEBUG
 		${1:body}
 	#endif
-snippet verbose
-	#ifdef VERBOSE
-		${1:body}
-	#endif
-snippet read
-	READ(${1:*},${2:*}) ${3}
 snippet write
 	WRITE(${1:*},${2:*}) ${3}
 snippet print
 	WRITE(${1:*},${2:*}) "${3}"
-snippet switch
-	SELECT CASE(${1:! variable name})
-		CASE(${2:some condition})
-			${3:! body}
-		CASE DEFAULT
-			${4:! do nothing}
-	END SELECT
-snippet boolswitch
-	SELECT CASE(${1:! variable name})
-		CASE(.TRUE.)
-			${2:! body}
-		CASE(.FALSE.)
-			${3:! do nothing}
-	END SELECT
+
+# SOME KEYWORDS ############################################################
+snippet true
+	.TRUE.
+snippet false
+	.FALSE.
+snippet not
+	.NOT.
