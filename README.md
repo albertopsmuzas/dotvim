@@ -20,6 +20,8 @@ during my everyday work.
 	* git submodule update
 4. Load documentation:
 	* Open vim and type ":Helptags"
+5. Download exuberant ctags package:
+	* sudo apt-get install exuberant-ctags (debian)
 
 ##ADD NEW PLUGIN
 1. Find the developer's github page
