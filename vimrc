@@ -7,6 +7,7 @@ execute pathogen#infect()
 " =========================================================================
 filetype plugin indent on	" activate plugins and indentation
 syntax on						" enable syntax highlighting
+set foldmethod=syntax		" enable syntax folding
 let mapleader = ','			" set leader key, better ',' for spanish keyboard ;)
 colorscheme koehler			" well, set solorscheme
 set number 						" number lines
