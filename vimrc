@@ -101,3 +101,6 @@ let g:SuperTabMappingTabLiteral = '<tab>'
 nmap <C-X> :MultipleCursorsFind
 cmap <C-X>  MultipleCursorsFind
 " ========================================================================
+" Options for lua-inspect plugin
+" ========================================================================
+let g:lua_inspect_warnings = 0

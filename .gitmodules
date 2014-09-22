@@ -28,3 +28,12 @@
 [submodule "bundle/markdown-utils"]
 	path = bundle/markdown-utils
 	url = https://github.com/plasticboy/vim-markdown
+[submodule "bundle/lua-support"]
+	path = bundle/lua-support
+	url = https://github.com/xolox/vim-lua-ftplugin
+[submodule "bundle/misc"]
+	path = bundle/misc
+	url = https://github.com/xolox/vim-misc
+[submodule "bundle/lua-inspect"]
+	path = bundle/lua-inspect
+	url = https://github.com/xolox/vim-lua-inspect
