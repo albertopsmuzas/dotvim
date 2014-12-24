@@ -105,3 +105,6 @@ cmap <C-X>  MultipleCursorsFind
 " Options for lua-inspect plugin
 " ========================================================================
 let g:lua_inspect_warnings = 0
+let g:lua_inspect_events = ''
+imap <F6> <C-o>:LuaInspectToggle<CR>
+nmap <F6>      :LuaInspectToggle<CR>
