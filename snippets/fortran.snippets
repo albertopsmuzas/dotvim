@@ -29,7 +29,7 @@ snippet module
 	${4:! variables and types, body}
 	CONTAINS
 	${5:! contains, body}
-	END MODULE $5
+	END MODULE $1
 snippet subroutine
 	!###########################################################
 	!# SUBROUTINE: ${1:name}
@@ -178,63 +178,71 @@ snippet boolswitch
 
 # basic
 snippet real
-	REAL(KIND=${1:8}) :: ${2:name}
+	REAL(KIND=${1:8}):: ${2:name}
 snippet int
-	INTEGER(KIND=${1:4}) :: ${2:name}
+	INTEGER(KIND=${1:4}):: ${2:name}
 snippet bool
-	LOGICAL :: ${1:name}
+	LOGICAL:: ${1:name}
 snippet char
-	CHARACTER :: ${1:name}
+	CHARACTER:: ${1:name}
 snippet string
-	CHARACTER(LEN=${1:*}) :: ${2:name}
+	CHARACTER(LEN=${1:*}):: ${2:name}
+snippet class
+	CLASS(${1:class type}):: ${2:name}
 
 # parameters
 snippet parareal
-	REAL(KIND=${1:8}),PARAMETER :: ${2:name}=${3:value}
+	REAL(KIND=${1:8}),PARAMETER:: ${2:name}=${3:value}
 snippet paraint
-	INTEGER(KIND=${1:4}),PARAMETER :: ${2:name}=${3:value}
+	INTEGER(KIND=${1:4}),PARAMETER:: ${2:name}=${3:value}
 snippet parabool
-	LOGICAL,PARAMETER :: ${1:name}=${2:value}
+	LOGICAL,PARAMETER:: ${1:name}=${2:value}
 snippet parachar
-	CHARACTER,PARAMETER :: ${1:name}=${2:value}
+	CHARACTER,PARAMETER:: ${1:name}=${2:value}
 snippet parastring
-	CHARACTER(LEN=${1:*}),PARAMETER :: ${2:name}=${3:value}
+	CHARACTER(LEN=${1:*}),PARAMETER:: ${2:name}=${3:value}
 
 # intent in
 snippet inreal
-	REAL(KIND=${1:8}),INTENT(IN) :: ${2:name}
+	REAL(KIND=${1:8}),INTENT(IN):: ${2:name}
 snippet inint
-	INTEGER(KIND=${1:4}),INTENT(IN) :: ${2:name}
+	INTEGER(KIND=${1:4}),INTENT(IN):: ${2:name}
 snippet inbool
-	LOGICAL,INTENT(IN) :: ${1:name}
+	LOGICAL,INTENT(IN):: ${1:name}
 snippet inchar
-	CHARACTER,INTENT(IN) :: ${1:name}
+	CHARACTER,INTENT(IN):: ${1:name}
 snippet instring
-	CHARACTER(LEN=${1:*}),INTENT(IN) :: ${2:name}
+	CHARACTER(LEN=${1:*}),INTENT(IN):: ${2:name}
+snippet inclass
+	CLASS(${1:class type}),INTENT(IN):: ${2:name}
 
 # intent out
 snippet outreal
-	REAL(KIND=${1:8}),INTENT(OUT) :: ${2:name}
+	REAL(KIND=${1:8}),INTENT(OUT):: ${2:name}
 snippet outint
-	INTEGER(KIND=${1:4}),INTENT(OUT) :: ${2:name}
+	INTEGER(KIND=${1:4}),INTENT(OUT):: ${2:name}
 snippet outbool
-	LOGICAL,INTENT(OUT) :: ${1:name}
+	LOGICAL,INTENT(OUT):: ${1:name}
 snippet outchar
-	CHARACTER,INTENT(OUT) :: ${1:name}
+	CHARACTER,INTENT(OUT):: ${1:name}
 snippet outstring
-	CHARACTER(LEN=${1:*}),INTENT(OUT) :: ${2:name}
+	CHARACTER(LEN=${1:*}),INTENT(OUT):: ${2:name}
+snippet outclass
+	CLASS(${1:class type}),INTENT(OUT):: ${2:name}
 
 # intent inout
 snippet inoutreal
-	REAL(KIND=${1:8}),INTENT(INOUT) :: ${2:name}
+	REAL(KIND=${1:8}),INTENT(INOUT):: ${2:name}
 snippet inoutint
-	INTEGER(KIND=${1:4}),INTENT(INOUT) :: ${2:name}
+	INTEGER(KIND=${1:4}),INTENT(INOUT):: ${2:name}
 snippet inoutbool
-	LOGICAL,INTENT(INOUT) :: ${1:name}
+	LOGICAL,INTENT(INOUT):: ${1:name}
 snippet inoutchar
-	CHARACTER,INTENT(INOUT) :: ${1:name}
+	CHARACTER,INTENT(INOUT):: ${1:name}
 snippet inoutstring
-	CHARACTER(LEN=${1:*}),INTENT(INOUT) :: ${2:name}
+	CHARACTER(LEN=${1:*}),INTENT(INOUT):: ${2:name}
+snippet inoutclass
+	CLASS(${1:class type}),INTENT(INOUT):: ${2:name}
 
 # generics
 snippet newtype
@@ -247,16 +255,16 @@ snippet newtype
 	!> @date ${3:! type a date}
 	!> @version 1.0
 	!----------------------------------------------------------------
-	TYPE :: $1
+	TYPE:: $1
 	PRIVATE
 		${4:! some atributes}
 	CONTAINS
 		${5:! some type-bound procedures}
 	END TYPE $1
 snippet type
-	TYPE(${1:type}) :: ${2:name}
+	TYPE(${1:type}):: ${2:name}
 snippet array
-	${1:type}, DIMENSION(${2}) :: ${3:name}
+	${1:type}, DIMENSION(${2}):: ${3:name}
 
 # I/O CONTROL ///////////////////////////////////////////////////////////////////////
 snippet open
@@ -281,3 +289,7 @@ snippet false
 	.FALSE.
 snippet not
 	.NOT.
+snippet allocate
+	ALLOCATE(${1:name}(${2:number}))$3
+snippet deallocate
+	DEALLOCATE(${1:name}(${2:number}))$3
