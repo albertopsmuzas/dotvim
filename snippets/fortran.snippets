@@ -5,31 +5,31 @@ snippet program
 	!> @brief
 	!! ${2:! Just brief explanation}
 	!
-	!> @author A.S. Muzas - alberto.muzas@uam.es
+	!> @author A.S. Muzas
 	!> @date ${3:! type a date}
 	!> @version 1.0
 	!##################################################
-	PROGRAM $1
+	program $1
 	! Initial declarations
 	${4:! use some modules?}
-	IMPLICIT NONE
+	implicit none
 	! Variables
 	${5:! variables}
-	END PROGRAM $1
+	end program $1
 snippet module
 	!#########################################################
 	! MODULE: ${1:!type a name}
 	!> @brief
 	!! ${2:brief explanation}
 	!##########################################################
-	MODULE $1
+	module $1
 	! Initial declarations
 	${3:!use other modules?}
-	IMPLICIT NONE
+	implicit none
 	${4:! variables and types, body}
-	CONTAINS
+	contains
 	${5:! contains, body}
-	END MODULE $1
+	end module $1
 snippet subroutine
 	!###########################################################
 	!# SUBROUTINE: ${1:name}
@@ -37,22 +37,22 @@ snippet subroutine
 	!> @brief
 	!! ${2:brief description}
 	!
-	!> @author A.S. Muzas - alberto.muzas@uam.es
+	!> @author A.S. Muzas
 	!> @date ${3:! type a date}
-	!> @version 1.0
+	!> @version 1.0 
 	!-----------------------------------------------------------
-	SUBROUTINE $1(${4:arguments})
+	subroutine $1(${4:arguments})
 		! Initial declarations
 		${5:use_modules?}
-		IMPLICIT NONE
+		implicit none
 		! I/O variables
 		${6:io_vars}
 		! Local variables
 		${7:local_vars}
 		! Run section
 		${8:body}
-		RETURN
-	END SUBROUTINE $1
+		return
+	end subroutine $1
 snippet boolfunc
 	!###########################################################
 	!# FUNCTION: ${1:! type a name}
@@ -60,22 +60,23 @@ snippet boolfunc
 	!> @brief
 	!! ${2:! type brief explanation}
 	!
-	!> @author A.S. Muzas - alberto.muzas@uam.es
+	!> @author A.S. Muzas
 	!> @date ${3:! type a date}
 	!> @version 1.0
 	!-----------------------------------------------------------
-	LOGICAL FUNCTION $1(${4:some arguments})
+	function $1(${4:arguments}) result(funcOut)
 		! Initial declarations
-		${5: !use_modules?}
-		IMPLICIT NONE
+		${5:! use_modules?}
+		implicit none
 		! I/O variables
-		${6:! io_vars}
+		${6: !io_vars}
+		logical:: funcOut
 		! Local variables
-		${7: !local_vars}
+		${7:! local_vars}
 		! Run section
 		${8: !body}
-		RETURN
-	END FUNCTION $1
+		return
+	end function $1
 snippet realfunc
 	!###########################################################
 	!# FUNCTION: ${1:! type a name}
@@ -83,166 +84,169 @@ snippet realfunc
 	!> @brief
 	!! ${2:! type brief explanation}
 	!
-	!> @author A.S. Muzas - alberto.muzas@uam.es
+	!> @author A.S. Muzas
 	!> @date ${3:! type a date}
 	!> @version 1.0
 	!-----------------------------------------------------------
-	REAL(KIND=${4:8}) FUNCTION $1(${5:arguments})
+	function $1(${4:arguments}) result(funcOut)
 		! Initial declarations
-		${6:! use_modules?}
-		IMPLICIT NONE
+		${5:! use_modules?}
+		implicit none
 		! I/O variables
-		${7: !io_vars}
+		${6: !io_vars}
+		real(kind=8):: funcOut
 		! Local variables
-		${8:! local_vars}
+		${7:! local_vars}
 		! Run section
-		${9: !body}
-		RETURN
-	END FUNCTION $1
+		${8: !body}
+		return
+	end function $1
 snippet intfunc
 	!###########################################################
-	!# FUNCTION: ${1:name}
+	!# FUNCTION: ${1:! type a name}
 	!###########################################################
 	!> @brief
-	!! ${2:type brief explanation}
+	!! ${2:! type brief explanation}
 	!
-	!> @author A.S. Muzas - alberto.muzas@uam.es
+	!> @author A.S. Muzas
 	!> @date ${3:! type a date}
 	!> @version 1.0
 	!-----------------------------------------------------------
-	INTEGER(KIND=${4:4}) FUNCTION $1(${5:arguments})
+	function $1(${4:arguments}) result(funcOut)
 		! Initial declarations
-		${6:use_modules?}
-		IMPLICIT NONE
+		${5:! use_modules?}
+		implicit none
 		! I/O variables
-		${7:io_vars}
+		${6: !io_vars}
+		integer(kind=4):: funcOut
 		! Local variables
-		${8:local_vars}
+		${7:! local_vars}
 		! Run section
-		${9:body}
-		RETURN
-	END FUNCTION $1
+		${8: !body}
+		return
+	end function $1
 snippet charfunc
 	!###########################################################
-	!# FUNCTION: ${1:name}
+	!# FUNCTION: ${1:! type a name}
 	!###########################################################
 	!> @brief
-	!! ${2:type brief explanation}
+	!! ${2:! type brief explanation}
 	!
-	!> @author A.S. Muzas - alberto.muzas@uam.es
+	!> @author A.S. Muzas
 	!> @date ${3:! type a date}
 	!> @version 1.0
 	!-----------------------------------------------------------
-	CHARACTER(LEN=${4:*}) FUNCTION $1(${5:arguments})
+	function $1(${4:arguments}) result(funcOut)
 		! Initial declarations
-		${6:use_modules?}
-		IMPLICIT NONE
+		${5:! use_modules?}
+		implicit none
 		! I/O variables
-		${7:io_vars}
+		${6: !io_vars}
+		character:: funcOut
 		! Local variables
-		${8:local_vars}
+		${7:! local_vars}
 		! Run section
-		${9:body}
-		RETURN
-	END FUNCTION $1
+		${8: !body}
+		return
+	end function $1
 
 # CONTROL INSTRUCTIONS //////////////////////////////////////////////////////////////
 snippet if
-	IF (${1:!condition}) THEN
+	if (${1:!condition}) then
 		${2:! body}
-	END IF
+	endif
 snippet do
-	DO ${1:i} = ${2:1}, ${3:N}
+	do ${1:i} = ${2:1}, ${3:N}
 		${4:! loop body}
-	END DO
+	enddo
 snippet dowhile
-	DO WHILE (${1:!condition})
+	do while (${1:!condition})
 		${2:! loop body}
-	END DO
+	enddo
 snippet switch
-	SELECT CASE(${1:! variable name})
-		CASE(${2:some condition})
+	select case(${1:! variable name})
+	case(${2:some condition})
 			${3:! body}
-		CASE DEFAULT
+	case default
 			${4:! do nothing}
-	END SELECT
+	end select
 snippet boolswitch
-	SELECT CASE(${1:! variable name})
-		CASE(.TRUE.)
+	select case(${1:! variable name})
+	case(.true.)
 			${2:! body}
-		CASE(.FALSE.)
+	case(.false.)
 			${3:! do nothing}
-	END SELECT
+	end select
 
 # VARIABLE TYPES ////////////////////////////////////////////////////////////////////
 
 # basic
 snippet real
-	REAL(KIND=${1:8}):: ${2:name}
+	real(kind=${1:8}):: ${2:name}
 snippet int
-	INTEGER(KIND=${1:4}):: ${2:name}
+	integer(kind=${1:4}):: ${2:name}
 snippet bool
-	LOGICAL:: ${1:name}
+	logical:: ${1:name}
 snippet char
-	CHARACTER:: ${1:name}
+	character:: ${1:name}
 snippet string
-	CHARACTER(LEN=${1:*}):: ${2:name}
+	character(len=${1:*}):: ${2:name}
 snippet class
-	CLASS(${1:class type}):: ${2:name}
+	class(${1:class type}):: ${2:name}
 
 # parameters
 snippet parareal
-	REAL(KIND=${1:8}),PARAMETER:: ${2:name}=${3:value}
+	real(kind=${1:8}),parameter:: ${2:name}=${3:value}
 snippet paraint
-	INTEGER(KIND=${1:4}),PARAMETER:: ${2:name}=${3:value}
+	integer(kind=${1:4}),parameter:: ${2:name}=${3:value}
 snippet parabool
-	LOGICAL,PARAMETER:: ${1:name}=${2:value}
+	logical,parameter:: ${1:name}=${2:value}
 snippet parachar
-	CHARACTER,PARAMETER:: ${1:name}=${2:value}
+	character,parameter:: ${1:name}=${2:value}
 snippet parastring
-	CHARACTER(LEN=${1:*}),PARAMETER:: ${2:name}=${3:value}
+	character(len=${1:*}),parameter:: ${2:name}=${3:value}
 
 # intent in
 snippet inreal
-	REAL(KIND=${1:8}),INTENT(IN):: ${2:name}
+	real(kind=${1:8}),intent(in):: ${2:name}
 snippet inint
-	INTEGER(KIND=${1:4}),INTENT(IN):: ${2:name}
+	integer(kind=${1:4}),intent(in):: ${2:name}
 snippet inbool
-	LOGICAL,INTENT(IN):: ${1:name}
+	logical,intent(in):: ${1:name}
 snippet inchar
-	CHARACTER,INTENT(IN):: ${1:name}
+	character,intent(in):: ${1:name}
 snippet instring
-	CHARACTER(LEN=${1:*}),INTENT(IN):: ${2:name}
+	character(len=${1:*}),intent(in):: ${2:name}
 snippet inclass
-	CLASS(${1:class type}),INTENT(IN):: ${2:name}
+	class(${1:class type}),intent(in):: ${2:name}
 
 # intent out
 snippet outreal
-	REAL(KIND=${1:8}),INTENT(OUT):: ${2:name}
+	real(kind=${1:8}),intent(out):: ${2:name}
 snippet outint
-	INTEGER(KIND=${1:4}),INTENT(OUT):: ${2:name}
+	integer(kind=${1:4}),intent(out):: ${2:name}
 snippet outbool
-	LOGICAL,INTENT(OUT):: ${1:name}
+	logical,intent(out):: ${1:name}
 snippet outchar
-	CHARACTER,INTENT(OUT):: ${1:name}
+	character,intent(out):: ${1:name}
 snippet outstring
-	CHARACTER(LEN=${1:*}),INTENT(OUT):: ${2:name}
+	character(len=${1:*}),intent(out):: ${2:name}
 snippet outclass
-	CLASS(${1:class type}),INTENT(OUT):: ${2:name}
+	class(${1:class type}),intent(out):: ${2:name}
 
 # intent inout
 snippet inoutreal
-	REAL(KIND=${1:8}),INTENT(INOUT):: ${2:name}
+	real(kind=${1:8}),intent(inout):: ${2:name}
 snippet inoutint
-	INTEGER(KIND=${1:4}),INTENT(INOUT):: ${2:name}
+	integer(kind=${1:4}),intent(inout):: ${2:name}
 snippet inoutbool
-	LOGICAL,INTENT(INOUT):: ${1:name}
+	logical,intent(inout):: ${1:name}
 snippet inoutchar
-	CHARACTER,INTENT(INOUT):: ${1:name}
+	character,intent(inout):: ${1:name}
 snippet inoutstring
-	CHARACTER(LEN=${1:*}),INTENT(INOUT):: ${2:name}
+	character(len=${1:*}),intent(inout):: ${2:name}
 snippet inoutclass
-	CLASS(${1:class type}),INTENT(INOUT):: ${2:name}
+	class(${1:class type}),intent(inout):: ${2:name}
 
 # generics
 snippet newtype
@@ -251,45 +255,44 @@ snippet newtype
 	!> @brief
 	!! ${2:! type brief explanation}
 	!
-	!> @author A.S. Muzas - alberto.muzas@uam.es
+	!> @author A.S. Muzas
 	!> @date ${3:! type a date}
 	!> @version 1.0
 	!----------------------------------------------------------------
-	TYPE:: $1
-	PRIVATE
+	type:: $1
 		${4:! some atributes}
-	CONTAINS
+	contains
 		${5:! some type-bound procedures}
-	END TYPE $1
+	end type $1
 snippet type
-	TYPE(${1:type}):: ${2:name}
+	tupe(${1:type}):: ${2:name}
 snippet array
-	${1:type}, DIMENSION(${2}):: ${3:name}
+	${1:type}, dimension(${2}):: ${3:name}
 
 # I/O CONTROL ///////////////////////////////////////////////////////////////////////
 snippet open
-	OPEN (${1:10},FILE=${2:filename},STATUS="${3:status}",ACTION="${4:action}")${5}
+	open (unit=${1:10},file=${2:filename},status="${3:status}",action="${4:action}")${5}
 snippet close
-	CLOSE(${1:10})${2}
+	close(${1:10})${2}
 snippet read
-	READ(${1:*},${2:*}) ${3}
+	read(${1:*},${2:*}) ${3}
 snippet debug
 	#ifdef DEBUG
 		${1:body}
 	#endif
 snippet write
-	WRITE(${1:*},${2:*}) ${3}
+	write(${1:*},${2:*}) ${3}
 snippet print
-	WRITE(${1:*},${2:*}) "${3}"
+	write(${1:*},${2:*}) '${3}'
 
 # SOME KEYWORDS ############################################################
 snippet true
-	.TRUE.
+	.true.
 snippet false
-	.FALSE.
+	.false.
 snippet not
-	.NOT.
+	.not.
 snippet allocate
-	ALLOCATE(${1:name}(${2:number}))$3
+	allocate(${1:name}(${2:number}))$3
 snippet deallocate
-	DEALLOCATE(${1:name}(${2:number}))$3
+	deallocate(${1:name}(${2:number}))$3
