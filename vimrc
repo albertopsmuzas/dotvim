@@ -5,37 +5,37 @@ execute pathogen#infect()
 " =========================================================================
 " Miscellaneous workflow enhancement
 " =========================================================================
-filetype plugin indent on	" activate plugins and indentation
-syntax on						" enable syntax highlighting
-set foldmethod=syntax		" enable syntax folding
-let mapleader = ','			" set leader key, better ',' for spanish keyboard ;)
-colorscheme koehler			" well, set solorscheme
-set number 						" number lines
-set sm 							" highlighs {0}
-set ruler 						" cursor always highlighted
-set nopaste						" exclude paste mode
-set t_Co=256					" set 256 colours mode
-set encoding=utf-8			" set encoding
-set undolevels=1000			" more levels for undo
-set smartindent				" smart indentation
-set ignorecase					" needed for smartcase
-set smartcase 					" case insensitive if all the pattern is in low case, else case sensitive
-set laststatus=2				" controls when the last window will've a status line (2: always)
-set incsearch 					" search words while they're typed
-set hlsearch 					" highlight matching words
-set mousehide 					" hide mouse while we're typing
-set ts=2							" spaces for tab
-set sw=2							" spaces indentation
-set backup 						" make backup copies of modified files
-set backupdir=~/.tmp 		" path for backup copies
-set clipboard=unnamed 		" yanked/deleted lines copied to system clipboard
-set cursorline					" draw horizontal line where cursor is
-" set expandtab				" change tabs with spaces
+filetype plugin indent on " activate plugins and indentation
+syntax on                 " enable syntax highlighting
+set foldmethod=syntax     " enable syntax folding
+let mapleader = ','       " set leader key, better ',' for spanish keyboard ;)
+colorscheme koehler       " well, set solorscheme
+set number                " number lines
+set sm                    " highlighs {0}
+set ruler                 " cursor always highlighted
+set nopaste               " exclude paste mode
+set t_Co=256              " set 256 colours mode
+set encoding=utf-8        " set encoding
+set undolevels=1000       " more levels for undo
+set smartindent           " smart indentation
+set ignorecase            " needed for smartcase
+set smartcase             " case insensitive if all the pattern is in low case, else case sensitive
+set laststatus=2          " controls when the last window will've a status line (2: always)
+set incsearch             " search words while they're typed
+set hlsearch              " highlight matching words
+set mousehide             " hide mouse while we're typing
+set ts=5                  " spaces for tab
+set sw=2                  " spaces indentation
+set backup                " make backup copies of modified files
+set backupdir=~/.tmp      " path for backup copies
+set clipboard=unnamed     " yanked/deleted lines copied to system clipboard
+set cursorline            " draw horizontal line where cursor is
+" set expandtab           " change tabs with spaces
 " =========================================================================
 " Print some characters for trailing spaces, tabs, etc...
 " =========================================================================
-"set list
-"set listchars=tab:>.,trail:.,extends:#,nbsp:.
+set list
+set listchars=tab:<->,trail:.,extends:#,nbsp:.
 " =========================================================================
 " Options to control the  behavior when part of a
 " mapped key sequence or keyboard code has been received
