@@ -24,7 +24,7 @@ set laststatus=2          " controls when the last window will've a status line 
 set incsearch             " search words while they're typed
 set hlsearch              " highlight matching words
 set mousehide             " hide mouse while we're typing
-set ts=5                  " spaces for tab
+set ts=2                  " spaces for tab
 set sw=2                  " spaces indentation
 set backup                " make backup copies of modified files
 set backupdir=~/.tmp      " path for backup copies
