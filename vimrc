@@ -35,7 +35,7 @@ set cursorline            " draw horizontal line where cursor is
 " Print some characters for trailing spaces, tabs, etc...
 " =========================================================================
 set list
-set listchars=tab:<->,trail:.,extends:#,nbsp:.
+set listchars=tab:\|\ ,trail:·,extends:%,nbsp:⎵,eol:⏎
 " =========================================================================
 " Options to control the  behavior when part of a
 " mapped key sequence or keyboard code has been received
