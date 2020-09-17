@@ -1,15 +1,15 @@
-#DOTVIM
+# DOTVIM
 
-##BRIEF
+## BRIEF
 Compilation of plugins and configuration files for vim which I use
 during my everyday work.
 
-##DETAILS
+## DETAILS
 * The resulting workflow is quite oriented to deal with FORTRAN 90,95,08 programming.
 * Plugins should be installed as a bundle, where pathogen manages them. They are
   included as submodules.
 
-##INSTALLATION
+## INSTALLATION
 1. Type:
 	* git clone https://github.com/moshpitsurfer/dotvim ~/.vim
 2. Create symlinks:
@@ -23,12 +23,12 @@ during my everyday work.
 5. Download exuberant ctags package:
 	* sudo apt-get install exuberant-ctags (debian)
 
-##ADD NEW PLUGIN
+## ADD NEW PLUGIN
 1. Find the developer's github page
 2. Type:
 	* git submodule add *repository* ~/.vim/bundle/*foo_name*
 
-##SUGGESTIONS
+## SUGGESTIONS
 * Add new snippets at ~/.vim/snippets folder.
 * Add file-type specific plugins at ~/.vim/ftplugins.
 * Install powerline fonts or you'll see some weird symbols plotted in airline. You can
