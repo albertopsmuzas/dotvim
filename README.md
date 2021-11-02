@@ -11,7 +11,7 @@ during my everyday work.
 
 ## INSTALLATION
 1. Type:
-	* git clone https://github.com/moshpitsurfer/dotvim ~/.vim
+	* git clone https://github.com/albertopsmuzas/dotvim ~/.vim
 2. Create symlinks:
 	* ln -s ~/.vim/vimrc ~/.vimrc
 3. Fetch submodules:
