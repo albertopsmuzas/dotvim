@@ -43,3 +43,6 @@
 [submodule "bundle/indentLine"]
 	path = bundle/indentLine
 	url = https://github.com/Yggdroot/indentLine
+[submodule "bundle/julia-vim"]
+	path = bundle/julia-vim
+	url = https://github.com/JuliaEditorSupport/julia-vim

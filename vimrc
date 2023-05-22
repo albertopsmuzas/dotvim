@@ -109,3 +109,10 @@ let g:lua_inspect_warnings = 0
 let g:lua_inspect_events = ''
 imap <F6> <C-o>:LuaInspectToggle<CR>
 nmap <F6>      :LuaInspectToggle<CR>
+" ========================================================================
+" Options for julia-vim, insert unicode characters like in latex
+" ========================================================================
+let g:latex_to_unicode_file_types = ".*"
+let g:latex_to_unicode_file_types_blacklist = ["tex","plaintext"]
+let g:latex_to_unicode_auto = 1
+
