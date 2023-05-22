@@ -9,7 +9,7 @@ filetype plugin indent on " activate plugins and indentation
 syntax on                 " enable syntax highlighting
 set nowrap                " do not split lines when they do not fit the window size
 set foldmethod=syntax     " enable syntax folding
-let mapleader = ','       " set leader key, better ',' for spanish keyboard ;)
+let mapleader = ','       " set leader key, better ',' for spanish keybord ;)
 colorscheme koehler       " well, set solorscheme
 set number                " number lines
 set sm                    " highlighs {0}
@@ -45,10 +45,10 @@ set timeout
 set ttimeout
 set timeoutlen=500
 " =========================================================================
-" Place holder <++> tools and definitions (MINI SCRIPT)
+" Place holder  tools and definitions (MINI SCRIPT)
 " Uses register 'z' as placeholder string storage
 " =========================================================================
-let g:placeholder="<++>"
+let g:placeholder=""
 let @z=g:placeholder
 imap <buffer> <C-J> <Esc>:let @/=g:placeholder<CR>/<CR>c4l
 nmap <buffer> <C-J> :let @/=g:placeholder<CR>/<CR>c4l
@@ -114,5 +114,3 @@ nmap <F6>      :LuaInspectToggle<CR>
 " ========================================================================
 let g:latex_to_unicode_file_types = ".*"
 let g:latex_to_unicode_file_types_blacklist = ["tex","plaintex"]
-let g:latex_to_unicode_auto = 1
-
