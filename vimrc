@@ -113,6 +113,6 @@ nmap <F6>      :LuaInspectToggle<CR>
 " Options for julia-vim, insert unicode characters like in latex
 " ========================================================================
 let g:latex_to_unicode_file_types = ".*"
-let g:latex_to_unicode_file_types_blacklist = ["tex","plaintext"]
+let g:latex_to_unicode_file_types_blacklist = ["tex","plaintex"]
 let g:latex_to_unicode_auto = 1
 
