@@ -1,6 +1,12 @@
 "=========================================================================
 " Use pathogen plugin
 " =========================================================================
+let g:pathogen_disabled = []
+if !has("nvim")
+	"call add(g:pathogen_disabled,"name of module to disable")
+endif
+if has("nvim")
+endif
 execute pathogen#infect()
 " =========================================================================
 " Miscellaneous workflow enhancement
@@ -115,3 +121,8 @@ nmap <F6>      :LuaInspectToggle<CR>
 " ========================================================================
 let g:latex_to_unicode_file_types = ".*"
 let g:latex_to_unicode_file_types_blacklist = ["tex","plaintex"]
+" ========================================================================
+" Options for markdown-preview
+" ========================================================================
+let g:mkdp_auto_start = 1
+let g:mkdp_browser = ''
