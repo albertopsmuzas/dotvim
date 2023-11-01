@@ -56,5 +56,8 @@
 	path = bundle/vim-airline
 	url = https://github.com/vim-airline/vim-airline
 [submodule "bundle/markdown-preview"]
-	path = bundle/markdown-preview
+	path = bundle/markdown-preview.nvim
 	url = https://github.com/iamcco/markdown-preview.nvim
+[submodule "bundle/markdown-preview.vim"]
+	path = bundle/markdown-preview.vim
+	url = https://github.com/iamcco/markdown-preview.vim
