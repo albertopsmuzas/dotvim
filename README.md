@@ -28,6 +28,12 @@ during my everyday work.
 2. Type:
 	* git submodule add *repository* ~/.vim/bundle/*foo_name*
 
+## UPDATE SUBMODULES
+1. Update each submodule from dotvim repo:
+    * cd ~/.vim && git submodule update
+1. Update each submodule from their respective origins:
+    * cd ~/.vim && git submodule update --remote
+
 ## SUGGESTIONS
 * Add new snippets at ~/.vim/snippets folder.
 * Add file-type specific plugins at ~/.vim/ftplugins.
