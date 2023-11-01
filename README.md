@@ -26,7 +26,7 @@ during my everyday work.
 ## INSTALATION FOR NEOVIM
 1. Perform vim installation
 2. Type:
-    * ln -s ~/.vim ~/.config/nvim (nvim compatibility)
+    * ln -s ~/.vim ~/.config/nvim
 
 ## ADD NEW PLUGIN
 1. Find the developer's github page
@@ -45,3 +45,7 @@ during my everyday work.
 * Install powerline fonts or you'll see some weird symbols plotted in airline. You can
   modify my ~/.vim/vimrc file and use other themes that don't need powerline fonts.
   For debian, type: apt-get install fonts-powerline.
+
+## WARNINGS
+* Apparently, there are some problems at least with vim to open markdown-preview in a new
+  window if there is not an already existent firefox instance. Maybe there is a way to solve this.

@@ -58,3 +58,6 @@
 [submodule "bundle/markdown-preview"]
 	path = bundle/markdown-preview.nvim
 	url = https://github.com/iamcco/markdown-preview.nvim
+[submodule "bundle/asyncrun.vim"]
+	path = bundle/asyncrun.vim
+	url = https://github.com/skywind3000/asyncrun.vim

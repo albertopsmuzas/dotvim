@@ -124,5 +124,8 @@ let g:latex_to_unicode_file_types_blacklist = ["tex","plaintex"]
 " ========================================================================
 " Options for markdown-preview
 " ========================================================================
+function OpenBrowserNew(url)
+	execute "!firefox --new-window " . a:url
+endfunction
 let g:mkdp_auto_start = 1
-let g:mkdp_browser = ''
+let g:mkdp_browserfunc = "OpenBrowserNew"
