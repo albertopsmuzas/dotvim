@@ -9,7 +9,7 @@ during my everyday work.
 * Plugins should be installed as a bundle, where pathogen manages them. They are
   included as submodules.
 
-## INSTALLATION
+## INSTALLATION FOR VIM
 1. Type:
 	* git clone https://github.com/albertopsmuzas/dotvim ~/.vim
 2. Create symlinks:
@@ -22,6 +22,11 @@ during my everyday work.
 	* Open vim and type ":Helptags"
 5. Download exuberant ctags package:
 	* sudo apt-get install exuberant-ctags (debian)
+
+## INSTALATION FOR NEOVIM
+1. Perform vim installation
+2. Type:
+    * ln -s ~/.vim ~/.config/nvim (nvim compatibility)
 
 ## ADD NEW PLUGIN
 1. Find the developer's github page
