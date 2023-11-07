@@ -38,6 +38,9 @@ during my everyday work.
     * cd ~/.vim && git submodule update
 1. Update each submodule from their respective origins:
     * cd ~/.vim && git submodule update --remote
+2. If submodules at bundle are empty that is because you updated the head of the repo but files
+   were not created actually. To solve this, type:
+    * cd ~/.vim && git submodule update --init --recursive
 
 ## SUGGESTIONS
 * Add new snippets at ~/.vim/snippets folder.
