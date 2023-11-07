@@ -122,10 +122,15 @@ nmap <F6>      :LuaInspectToggle<CR>
 let g:latex_to_unicode_file_types = ".*"
 let g:latex_to_unicode_file_types_blacklist = ["tex","plaintex"]
 " ========================================================================
+" Options for markdown-tools
+" ========================================================================
+let g:vim_markdown_math = 1                  " conceal latex formulas in Markdown files
+let g:vim_markdown_folding_disabled = 1      " no folding
+" ========================================================================
 " Options for markdown-preview
 " ========================================================================
 function OpenBrowserNew(url)
-	execute "!firefox --new-window " . a:url
+	silent exec "!firefox --new-window " . a:url
 endfunction
 let g:mkdp_auto_start = 1
 let g:mkdp_browserfunc = "OpenBrowserNew"

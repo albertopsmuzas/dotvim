@@ -1,1 +1,1 @@
-autocmd BufNewFile,BufRead README.md,*.mkdn,*.markdown :set filetype=markdown
+autocmd BufNewFile,BufRead *.mkdn,*.markdown,*.md :set filetype=markdown

@@ -1,54 +1,78 @@
 # DOTVIM
 
 ## BRIEF
-Compilation of plugins and configuration files for vim which I use
+Collection of plugins and configuration files for vim which I use
 during my everyday work.
 
 ## DETAILS
-* The resulting workflow is quite oriented to deal with FORTRAN 90,95,08 programming.
+* The resulting workflow is quite oriented to deal with FORTRAN programming.
 * Plugins should be installed as a bundle, where pathogen manages them. They are
   included as submodules.
 
 ## INSTALLATION FOR VIM
 1. Type:
-	* git clone https://github.com/albertopsmuzas/dotvim ~/.vim
+```bash
+    git clone https://github.com/albertopsmuzas/dotvim ~/.vim
+```
 2. Create symlinks:
-	* ln -s ~/.vim/vimrc ~/.vimrc
+```bash
+    ln -s ~/.vim/vimrc ~/.vimrc
+```
 3. Fetch submodules:
-	* cd ~/.vim
-	* git submodule init
-	* git submodule update
+```bash
+    cd ~/.vim
+    git submodule init
+    git submodule update
+```
 4. Load documentation:
-	* Open vim and type ":Helptags"
-5. Download exuberant ctags package:
-	* sudo apt-get install exuberant-ctags (debian)
+	* Open vim in normal mode and type
+```vim
+        :Helptags
+```
+5. Download exuberant ctags package (example for debian)
+```bash
+    sudo apt-get install exuberant-ctags
+```
 
 ## INSTALATION FOR NEOVIM
 1. Perform vim installation
 2. Type:
-    * ln -s ~/.vim ~/.config/nvim
+```bash
+    ln -s ~/.vim ~/.config/nvim
+```
 
 ## ADD NEW PLUGIN
-1. Find the developer's github page
-2. Type:
-	* git submodule add *repository* ~/.vim/bundle/*foo_name*
+- Find the developer's repo page (in github perhaps) and add it to boundle
+```bash
+    git submodule add <path to remote repo> ~/.vim/bundle/<remote repo name>
+```
 
-## UPDATE SUBMODULES
-1. Update each submodule from dotvim repo:
-    * cd ~/.vim && git submodule update
-1. Update each submodule from their respective origins:
-    * cd ~/.vim && git submodule update --remote
-2. If submodules at bundle are empty that is because you updated the head of the repo but files
-   were not created actually. To solve this, type:
-    * cd ~/.vim && git submodule update --init --recursive
+## TIPS WHEN UPDATING SUBMODULES
+- Update each submodule to be up to date with dotvim repo
+```bash
+    cd ~/.vim && git submodule update
+```
+- Update each submodule from their respective origins. You may end up ahead of dotvim repo
+```bash
+    cd ~/.vim && git submodule update --remote
+```
+- If submodules at bundle are empty that is because you updated the head of the repo but
+  files were not created actually. To solve this, type:
+```bash
+    cd ~/.vim && git submodule update --init --recursive
+```
 
 ## SUGGESTIONS
-* Add new snippets at ~/.vim/snippets folder.
-* Add file-type specific plugins at ~/.vim/ftplugins.
+* Add new snippets at `~/.vim/snippets` folder.
+* Add file-type specific plugins at `~/.vim/ftplugins`.
 * Install powerline fonts or you'll see some weird symbols plotted in airline. You can
-  modify my ~/.vim/vimrc file and use other themes that don't need powerline fonts.
+  modify my `~/.vim/vimrc` file and use other themes that don't need powerline fonts.
   For debian, type: apt-get install fonts-powerline.
 
-## WARNINGS
+## ISSUES
 * Apparently, there are some problems at least with vim to open markdown-preview in a new
   window if there is not an already existent firefox instance. Maybe there is a way to solve this.
+* To make markdown-preview work, open neovim and type:
+```vim
+    call mkdp#util#install()
+```
