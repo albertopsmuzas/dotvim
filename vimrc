@@ -55,7 +55,7 @@ set timeoutlen=500
 " Place holder  tools and definitions (MINI SCRIPT)
 " Uses register 'z' as placeholder string storage
 " =========================================================================
-let g:placeholder=""
+let g:placeholder="<++>"
 let @z=g:placeholder
 imap <buffer> <C-J> <Esc>:let @/=g:placeholder<CR>/<CR>c4l
 nmap <buffer> <C-J> :let @/=g:placeholder<CR>/<CR>c4l
@@ -97,7 +97,8 @@ if !exists('g:airline_symbols')
 endif
 let g:airline_symbols.space = "\ua0"
 let g:airline_powerline_fonts = 1
-let g:airline_theme             = 'badwolf'
+let g:airline_theme='badwolf'
+let g:airline#extensions#tabline#enabled = 1
 " ========================================================================
 " Options for supertab plugin
 " ========================================================================
