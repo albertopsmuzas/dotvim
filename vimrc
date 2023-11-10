@@ -72,7 +72,7 @@ inoremap {} {}<Esc>"zphhhhi
 inoremap "" ""<Esc>"zphhhhi
 inoremap '' ''<Esc>"zphhhhi
 " =========================================================================
-" Key maps
+" Key maps for tab managing
 " =========================================================================
 nmap <Leader>1 :tabprevious<Enter>
 nmap <Leader>2 :tabnext<Enter>
@@ -80,6 +80,11 @@ nmap <Leader>f :tabfind<Enter>
 nmap <Leader>m :tabmove<Enter>
 nmap <Leader>n :tabnew<Enter>
 nmap <silent> <Leader>/ :nohlsearch<CR>
+" =========================================================================
+" Key maps for buffer managing
+" =========================================================================
+nmap <C-Right> :bnext<CR>
+nmap <C-Left>  :bprev<CR>
 " =========================================================================
 " Shortcuts for Taglist plugin
 " =========================================================================
@@ -133,5 +138,6 @@ let g:vim_markdown_folding_disabled = 1      " no folding
 function OpenBrowserNew(url)
 	silent exec "!firefox --new-window " . a:url
 endfunction
-let g:mkdp_auto_start = 1
+nmap <F9> :MarkdownPreviewToggle<CR>
+let g:mkdp_auto_start = 0
 let g:mkdp_browserfunc = "OpenBrowserNew"
