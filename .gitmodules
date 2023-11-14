@@ -43,12 +43,6 @@
 [submodule "bundle/julia-vim"]
 	path = bundle/julia-vim
 	url = https://github.com/JuliaEditorSupport/julia-vim
-[submodule "vim-airline"]
-	path = vim-airline
-	url = https://github.com/vim-airline/vim-airline
-[submodule "vim-airline-themes"]
-	path = vim-airline-themes
-	url = https://github.com/vim-airline/vim-airline-themes
 [submodule "bundle/vim-airline-themes"]
 	path = bundle/vim-airline-themes
 	url = https://github.com/vim-airline/vim-airline-themes
