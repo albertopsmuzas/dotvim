@@ -12,6 +12,8 @@ execute pathogen#infect()
 " Miscellaneous workflow enhancement
 " =========================================================================
 filetype plugin indent on  " activate plugins and indentation
+set visualbell             " turn off anoying beep in WSL
+set t_vb=                  " don't even use a visual bell
 syntax on                  " enable syntax highlighting
 set nowrap                 " do not split lines when they do not fit the window size
 set foldmethod=syntax      " enable syntax folding
